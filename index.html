@@ -2,6 +2,7 @@
 <html>
 <head>
     <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />   
+    <script type="text/javascript" src="harvest_soul.js"></script>
     <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
 
@@ -27,6 +28,15 @@
             padding-left: 6px;
             padding-top: 6px;
         }
+
+        #logger {
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -49,8 +59,18 @@
         <div class="slot"></div>
     </div>
 
-    <div class="item"></div>
+    <br />
 
+    <div class="small_inventory" style="height: 56px;">
+        <div class="slot"></div>
+        <div class="slot">
+            <div class="item"></div>
+        </div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+    </div>
+
+    <textarea id="logger"></textarea>
 
     <script>
         $( ".item" ).draggable({ snap: ".slot", snapMode: "inner" });
