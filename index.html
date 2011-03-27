@@ -1,6 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />   
+    <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
+
     <style>
         .slot {
             width: 48px;
@@ -46,6 +50,11 @@
     </div>
 
     <div class="item"></div>
+
+
+    <script>
+        $( ".item" ).draggable({ snap: ".slot", snapMode: "inner" });
+    </script>
     
 </body>
 </html>
