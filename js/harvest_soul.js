@@ -15,6 +15,7 @@ $$.Items = {
         $( sel ).draggable({ 
             snap: ".slot", 
             snapMode: "inner",
+            revert: true,
             helper: "clone",
             opacity: 0.7,
             stack: ".item" 
