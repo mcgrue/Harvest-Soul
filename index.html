@@ -2,6 +2,7 @@
 <html>
 <head>
     <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />   
+    <link type="text/css" href="css/items.css" rel="stylesheet" />   
     <script type="text/javascript" src="js/harvest_soul.js"></script>
     <script type="text/javascript" src="js/mixologist.js"></script>
     <script type="text/javascript" src="js/jquery-ui/jquery-1.5.1.js"></script>
@@ -77,14 +78,14 @@
     <div id="tabs-1" class="playarea">
         <h1>Laboratory</h1>
         <div class="small_inventory">
-            <div class="slot" id="slot_a"></div>
-            <div class="slot" id="slot_b"></div>
-            <div class="slot" id="slot_c"></div>
-            <div class="slot" id="slot_d"></div>
-            <div class="slot" id="slot_e"></div>
-            <div class="slot" id="slot_f"></div>
-            <div class="slot" id="slot_g"></div>
-            <div class="slot" id="slot_h"></div>
+            <div class="slot" id="slot_a"><div class="item skull"</div></div>
+            <div class="slot" id="slot_b"><div class="item scissors"</div></div>
+            <div class="slot" id="slot_c"><div class="item parchment"</div></div>
+            <div class="slot" id="slot_d"><div class="item jar"</div></div>
+            <div class="slot" id="slot_e"><div class="item herb"</div></div>
+            <div class="slot" id="slot_f"><div class="item gyoza"</div></div>
+            <div class="slot" id="slot_g"><div class="item gem"</div></div>
+            <div class="slot" id="slot_h"><div class="item cat"</div></div>
             <div class="slot" id="slot_i"></div>
             <div class="slot" id="slot_j"></div>
             <div class="slot" id="slot_k"></div>
@@ -134,6 +135,8 @@
                         var node = $(slot).append('<div class="item '+newItem+'"></div>');
                         $$.Items.makeDraggable( $(node.children()[0]) );
                         return;
+                    } else {
+                        return false;
                     }
                 }
 
