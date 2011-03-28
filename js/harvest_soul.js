@@ -1,6 +1,6 @@
-var HS = {};
+var $$ = {};
 
-HS.log = function(msg) {
+$$.log = function(msg) {
     old = $('#logger').val();
 
     if( old.length > 10000 ) {

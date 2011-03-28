@@ -32,7 +32,6 @@
             background-color: #15B01A;
         }
 
-
         .small_inventory {
             width: 216px;
             background-color: #630;
@@ -53,33 +52,33 @@
 </head>
 <body>
     <div class="small_inventory">
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
+        <div class="slot" id="slot_a"></div>
+        <div class="slot" id="slot_b"></div>
+        <div class="slot" id="slot_c"></div>
+        <div class="slot" id="slot_d"></div>
+        <div class="slot" id="slot_e"></div>
+        <div class="slot" id="slot_f"></div>
+        <div class="slot" id="slot_g"></div>
+        <div class="slot" id="slot_h"></div>
+        <div class="slot" id="slot_i"></div>
+        <div class="slot" id="slot_j"></div>
+        <div class="slot" id="slot_k"></div>
+        <div class="slot" id="slot_l"></div>
+        <div class="slot" id="slot_m"></div>
+        <div class="slot" id="slot_n"></div>
+        <div class="slot" id="slot_o"></div>
+        <div class="slot" id="slot_p"></div>
     </div>
 
     <br />
 
     <div class="small_inventory" style="height: 56px;">
-        <div class="slot"></div>
-        <div class="slot">
+        <div class="slot" id="tool_a"></div>
+        <div class="slot" id="tool_b">
             <div class="item red"</div>
         </div>
-        <div class="slot"></div>
-        <div class="slot">
+        <div class="slot" id="tool_c"></div>
+        <div class="slot" id="tool_d">
             <div class="item green"</div>
         </div>
     </div>
@@ -87,10 +86,28 @@
     <textarea id="logger"></textarea>
 
     <script>
-        $( ".item" ).draggable({ snap: ".slot", snapMode: "inner" });
+        $( ".item" ).draggable({ 
+            snap: ".slot", 
+            snapMode: "inner",
+            helper: "clone",
+            opacity: 0.7,
+            stack: ".item" 
+        });
         $( ".slot" ).droppable({
             drop: function( event, ui ) {
-                HS.log( 'Item dropped into slot.' );
+                var slot = $(event.target);
+                var kids = slot.children();
+
+                if( kids.length ) {
+                    debugger;
+                }
+
+                var node = ui.draggable.detach();
+
+                node.css( {'left':0, 'top':0} );
+                node.appendTo(slot);
+
+                $$.log( 'Item dropped into slot.' );
             }
         });
     </script>
