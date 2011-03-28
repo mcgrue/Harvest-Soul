@@ -3,6 +3,7 @@
 <head>
     <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />   
     <script type="text/javascript" src="js/harvest_soul.js"></script>
+    <script type="text/javascript" src="js/mixologist.js"></script>
     <script type="text/javascript" src="js/jquery-ui/jquery-1.5.1.js"></script>
     <script type="text/javascript" src="js/jquery-ui/ui/jquery.ui.core.js"></script>
     <script type="text/javascript" src="js/jquery-ui/ui/jquery.ui.widget.js"></script>
@@ -30,6 +31,14 @@
 
         .green {
             background-color: #15B01A;
+        }
+
+        .brown {
+            background-color: #653700;
+        }
+
+        .yellow {
+            background-color: #ffff14;
         }
 
         .small_inventory {
@@ -99,7 +108,14 @@
                 var kids = slot.children();
 
                 if( kids.length ) {
-                    debugger;
+                    var socketed = $(kids[0]);
+                    var newItem = $$.canMix(socketed, ui.draggable);
+                    if( newItem ) {
+                        socketed.remove();
+                        ui.draggable.remove();
+                        $(slot).append('<div class="item '+newItem+' ui-draggable"></div>');
+                        return;
+                    }
                 }
 
                 var node = ui.draggable.detach();
