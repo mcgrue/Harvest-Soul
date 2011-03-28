@@ -78,6 +78,11 @@
 
     <script>
         $( ".item" ).draggable({ snap: ".slot", snapMode: "inner" });
+        $( ".slot" ).droppable({
+            drop: function( event, ui ) {
+                HS.log( 'Item dropped into slot.' );
+            }
+        });
     </script>
     
 </body>

@@ -1,5 +1,12 @@
 var HS = {};
-HS.log = function(str) {
-    $('#logger').value = str + '\n' + $('#logger').value;
-}
+
+HS.log = function(msg) {
+    old = $('#logger').val();
+
+    if( old.length > 10000 ) {
+        old = '';
+    }
+
+    $('#logger').val( msg + "\n" + old );
+};
 
