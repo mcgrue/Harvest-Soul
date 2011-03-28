@@ -10,8 +10,11 @@
     <script type="text/javascript" src="js/jquery-ui/ui/jquery.ui.mouse.js"></script>
     <script type="text/javascript" src="js/jquery-ui/ui/jquery.ui.draggable.js"></script>
     <script type="text/javascript" src="js/jquery-ui/ui/jquery.ui.droppable.js"></script>
-
+    <script type="text/javascript" src="js/jquery-ui/ui/jquery.ui.tabs.js"></script>
     <style>
+        .playarea {
+        }
+    
         .slot {
             width: 48px;
             height: 48px;
@@ -42,9 +45,9 @@
         }
 
         .small_inventory {
-            width: 216px;
+            width: 220px;
             background-color: #630;
-            height: 216px;
+            height: 220px;
             padding-left: 6px;
             padding-top: 6px;
         }
@@ -53,45 +56,65 @@
             width: 400px;
             height: 100px;
             position: absolute;
-            right: 10px;
-            top: 10px;
+            right: 30px;
+            top: 100px;
         }
-
     </style>
+    <script>
+        $(function() {
+            $( "#tabs" ).tabs();
+        });        
+    </script>
 </head>
 <body>
-    <div class="small_inventory">
-        <div class="slot" id="slot_a"></div>
-        <div class="slot" id="slot_b"></div>
-        <div class="slot" id="slot_c"></div>
-        <div class="slot" id="slot_d"></div>
-        <div class="slot" id="slot_e"></div>
-        <div class="slot" id="slot_f"></div>
-        <div class="slot" id="slot_g"></div>
-        <div class="slot" id="slot_h"></div>
-        <div class="slot" id="slot_i"></div>
-        <div class="slot" id="slot_j"></div>
-        <div class="slot" id="slot_k"></div>
-        <div class="slot" id="slot_l"></div>
-        <div class="slot" id="slot_m"></div>
-        <div class="slot" id="slot_n"></div>
-        <div class="slot" id="slot_o"></div>
-        <div class="slot" id="slot_p"></div>
-    </div>
 
-    <br />
-
-    <div class="small_inventory" style="height: 56px;">
-        <div class="slot" id="tool_a"></div>
-        <div class="slot" id="tool_b">
-            <div class="item red"</div>
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Laboratory</a></li>
+        <li><a href="#tabs-2">Bestiary</a></li>
+        <li><a href="#tabs-3">World Map</a></li>
+    </ul>
+    <div id="tabs-1" class="playarea">
+        <h1>Laboratory</h1>
+        <div class="small_inventory">
+            <div class="slot" id="slot_a"></div>
+            <div class="slot" id="slot_b"></div>
+            <div class="slot" id="slot_c"></div>
+            <div class="slot" id="slot_d"></div>
+            <div class="slot" id="slot_e"></div>
+            <div class="slot" id="slot_f"></div>
+            <div class="slot" id="slot_g"></div>
+            <div class="slot" id="slot_h"></div>
+            <div class="slot" id="slot_i"></div>
+            <div class="slot" id="slot_j"></div>
+            <div class="slot" id="slot_k"></div>
+            <div class="slot" id="slot_l"></div>
+            <div class="slot" id="slot_m"></div>
+            <div class="slot" id="slot_n"></div>
+            <div class="slot" id="slot_o"></div>
+            <div class="slot" id="slot_p"></div>
         </div>
-        <div class="slot" id="tool_c"></div>
-        <div class="slot" id="tool_d">
-            <div class="item green"</div>
+
+        <br />
+
+        <div class="small_inventory" style="height: 56px;">
+            <div class="slot" id="tool_a"></div>
+            <div class="slot" id="tool_b">
+                <div class="item red"</div>
+            </div>
+            <div class="slot" id="tool_c"></div>
+            <div class="slot" id="tool_d">
+                <div class="item green"</div>
+            </div>
         </div>
     </div>
-
+    <div id="tabs-2" class="playarea">
+        <h1>Stable</h1>
+    </div>
+    <div id="tabs-3" class="playarea">
+        <h1>World Map</h1>
+    </div>
+</div>
     <textarea id="logger"></textarea>
 
     <script>
