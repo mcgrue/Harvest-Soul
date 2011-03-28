@@ -10,3 +10,16 @@ $$.log = function(msg) {
     $('#logger').val( msg + "\n" + old );
 };
 
+$$.Items = {
+    makeDraggable : function(sel) {
+        $( sel ).draggable({ 
+            snap: ".slot", 
+            snapMode: "inner",
+            helper: "clone",
+            opacity: 0.7,
+            stack: ".item" 
+        });
+    }
+}
+
+
