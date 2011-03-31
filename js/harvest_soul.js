@@ -11,11 +11,18 @@ $$.log = function(msg) {
 };
 
 $$.dragCounter = {
-    _ar : [];
+    
+    _ar : [],
+
     push : function() {
         var d = new Date();
         _ar.push(d.getTime()); 
     },
+
+    reset : function() {
+        $$.dragCounter._ar = [];
+        $$.log( 'reset drag counter.' );
+    }
 }
 
 $$.Items = {
@@ -29,8 +36,10 @@ $$.Items = {
             stack: ".item", 
 
             drag: function() {
-                counts[1]++;
-                updateCounterStatus( $drag_counter, counts[ 1 ] );
+                $$.log( 'drag: ' + this );
+            },
+            start: function() {
+                $$.dragCounter.reset();
             }
         });
     }
