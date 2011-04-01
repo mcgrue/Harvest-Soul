@@ -3,7 +3,7 @@ var $$ = {};
 $$.log = function(msg) {
     old = $('#logger').val();
 
-    if( old.length > 10000 ) {
+    if( old.length > 500 ) {
         old = '';
     }
 
@@ -36,7 +36,8 @@ $$.Items = {
             stack: ".item", 
 
             drag: function() {
-                $$.log( 'drag: ' + this );
+                var pos = $(this).position();
+                $$.log( 'drag: ' + pos.top + ', '+pos.left );
             },
             start: function() {
                 $$.dragCounter.reset();
