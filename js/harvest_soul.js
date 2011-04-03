@@ -12,16 +12,77 @@ $$.log = function(msg) {
 
 $$.dragCounter = {
     
-    _ar : [],
-
-    push : function() {
-        var d = new Date();
-        _ar.push(d.getTime()); 
-    },
+    dragStack : [],
 
     reset : function() {
-        $$.dragCounter._ar = [];
+        $$.dragStack = [];
         $$.log( 'reset drag counter.' );
+    },
+
+    recordDrag : function(x,y) {
+        var d = new Date();
+        this.dragStack.push([d.getTime(), x, y]); 
+    }, 
+
+    shakeCalc : function() {
+        var d = new Date();
+
+        var hit = false;
+
+        var max_check = 1250;
+        var shake_check = 1000;
+        var direction_change_threshhold = 7;
+
+        var i = 0;
+        while( this.dragStack.length > 0 && this.dragStack[0][0] < d.getTime() - max_check ) {
+            this.dragStack.pop();
+            i++;
+        }
+
+        if( i ) {
+            $$.log( 'shakecalc: cleaned ' + i );
+        }        
+
+        var direction_changes = 0;
+        var last_x = 0;
+        var last_dir = 0;
+
+        for( var i = 0; i<this.dragStack.length; i++ ) {
+            var cur = this.dragStack[i];
+    
+
+            if( i == 0 ) {
+                last_x = cur[1];
+            } else if( i == 1 ) {
+                last_dir = cur[1] - last_x;
+                last_x = cur[1];
+            } else {
+                var prev_dir = last_dir;
+                last_dir = cur[1] - last_x;
+                last_x = cur[1];
+
+                if( prev_dir < 0 && last_dir > 0 ) {
+                    direction_changes++;        
+                } else if( prev_dir > 0 && last_dir < 0 ) {
+                    direction_changes++;
+                }
+            }
+
+            if( direction_changes >= direction_change_threshhold ) {
+                hit = true;
+                break;       
+            }
+        }
+
+        if( hit ) {
+            $$.log( 'SHAKE!!!!!!!!!!!' );
+        }
+
+
+        if(this.dragStack.length) {
+            $$.log('shakecalc mofo! ' + this.dragStack[this.dragStack.length-1][0]);  
+        }
+ 
     }
 }
 
@@ -31,15 +92,20 @@ $$.Items = {
             snap: ".slot", 
             snapMode: "inner",
             revert: true,
-            helper: "clone",
-            opacity: 0.7,
+            //helper: "clone",
+            opacity: 1.0,
             stack: ".item", 
 
             drag: function() {
                 var pos = $(this).position();
-                $$.log( 'drag: ' + pos.top + ', '+pos.left );
+                $$.log( 'drag: ' + pos.left + ', '+pos.top );
+                $$.dragCounter.recordDrag( pos.left, pos.top );
+                $$.dragCounter.shakeCalc();
             },
             start: function() {
+                $$.dragCounter.reset();
+            },
+            stop: function() {
                 $$.dragCounter.reset();
             }
         });
