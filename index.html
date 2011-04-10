@@ -70,11 +70,13 @@
 <body>
 
 <div id="tabs">
+<!--
     <ul>
         <li><a href="#tabs-1">Laboratory</a></li>
         <li><a href="#tabs-2">Bestiary</a></li>
         <li><a href="#tabs-3">World Map</a></li>
     </ul>
+-->
     <div id="tabs-1" class="playarea">
         <h1>Laboratory</h1>
         <div class="small_inventory">
@@ -88,7 +90,7 @@
             <div class="slot" id="slot_h"><div class="item mixed_plaster"</div></div>
             <div class="slot" id="slot_i"><div class="item cat"></div></div>
             <div class="slot" id="slot_j"><div class="item scissors"></div></div>
-            <div class="slot" id="slot_k"></div>
+            <div class="slot" id="slot_k"><div class="item cat"></div></div>
             <div class="slot" id="slot_l"></div>
             <div class="slot" id="slot_m"><div class="item paper"></div></div>
             <div class="slot" id="slot_n"></div>
@@ -153,6 +155,16 @@
                 }, 10);
             }
         });
+
+        $$.handleShake = function(item) {
+            var newItem = $$.canShake(item);
+            if( newItem ) {
+                var slot = item.parent();
+                item.remove();
+                var node = $(slot).append('<div class="item '+newItem+'"></div>');
+                $$.Items.makeDraggable( $(node.children()[0]) );
+            }
+        }
 
         $$.Slots.makeSpecial('#tool_a', 'tool_fire', function(event, ui) {
             var newItem = $$.canBurn(ui.draggable);

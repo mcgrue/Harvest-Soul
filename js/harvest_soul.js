@@ -24,7 +24,7 @@ $$.dragCounter = {
         this.dragStack.push([d.getTime(), x, y]); 
     }, 
 
-    shakeCalc : function() {
+    shakeCalc : function(ui) {
         var d = new Date();
 
         var hit = false;
@@ -49,7 +49,6 @@ $$.dragCounter = {
 
         for( var i = 0; i<this.dragStack.length; i++ ) {
             var cur = this.dragStack[i];
-    
 
             if( i == 0 ) {
                 last_x = cur[1];
@@ -75,7 +74,7 @@ $$.dragCounter = {
         }
 
         if( hit ) {
-            $$.log( 'SHAKE!!!!!!!!!!!' );
+            $$.handleShake(ui);
         }
 
         if(this.dragStack.length) {
@@ -98,7 +97,7 @@ $$.Items = {
                 var pos = $(this).position();
                 $$.log( 'drag: ' + pos.left + ', '+pos.top );
                 $$.dragCounter.recordDrag( pos.left, pos.top );
-                $$.dragCounter.shakeCalc();
+                $$.dragCounter.shakeCalc($(this));
             },
             start: function() {
                 $$.dragCounter.reset();

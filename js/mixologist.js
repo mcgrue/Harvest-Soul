@@ -17,7 +17,7 @@ $$.mixchart = {
 };
 
 $$.shakeChart = {
-    
+    cat : 'skull'
 };
 
 $$.burnChart = {
@@ -27,6 +27,19 @@ $$.burnChart = {
 $$.isItem = function( elem ) {
     return !(elem.attr('class').split(' ')[0] != 'item' || !elem.attr('class').split(' ')[1]);
 }
+
+$$.canShake = function( dragged ) {
+    if( !$$.isItem(dragged) ) {
+        debugger;
+        throw "invalid: was passed in something that was not an item.";
+    } 
+    
+    var a = dragged.attr('class').split(' ')[1];
+
+    if( $$.shakeChart[a] ) {
+        return $$.shakeChart[a];
+    }
+};
 
 $$.canBurn = function( dragged ) {
     if( !$$.isItem(dragged) ) {
