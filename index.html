@@ -158,7 +158,7 @@
             var newItem = $$.canBurn(ui.draggable);
             if( newItem ) {
                 var slot = ui.draggable.parent();
-                slot.innerHTML = "";
+                ui.draggable.remove();
                 var node = $(slot).append('<div class="item '+newItem+'"></div>');
                 $$.Items.makeDraggable( $(node.children()[0]) );
             }
