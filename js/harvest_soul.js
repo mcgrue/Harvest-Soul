@@ -78,11 +78,9 @@ $$.dragCounter = {
             $$.log( 'SHAKE!!!!!!!!!!!' );
         }
 
-
         if(this.dragStack.length) {
             $$.log('shakecalc mofo! ' + this.dragStack[this.dragStack.length-1][0]);  
         }
- 
     }
 }
 
@@ -149,5 +147,18 @@ $$.Slots = {
                 }, 10);
             }
         });
+    },
+
+/*
+    makeSpecial : function( slot, classname, fn ) {
+        slot.add
+        var orig_fn = slot.drop;
+        slot.drop = function(event, ui) {
+            orig_fn(event, ui);
+            fn(event, ui);
+        }
     }
+*/
 }
+
+

@@ -5,6 +5,14 @@ $$.mixchart = {
 
     green : {
         red : 'yellow'
+    },
+
+    cat : {
+        scissors : 'skull'
+    },
+
+    scissors : {
+        cat : 'scissors'
     }
 };
 

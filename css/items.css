@@ -30,3 +30,199 @@
 .cat {
     background-image: url(../img/cat.jpg);
 }
+
+.rock {
+    background-image: url(../img/sheet_1.png);
+    background-position: 0px 0px;
+}
+
+.dirt {
+    background-image: url(../img/sheet_1.png);
+    background-position: -48px 0px;
+}
+
+.gypsum {
+    background-image: url(../img/sheet_1.png);
+    background-position: -96px 0px;
+}
+
+.gypsum_dust {
+    background-image: url(../img/sheet_1.png);
+    background-position: -144px 0px;
+}
+
+.water {
+    background-image: url(../img/sheet_1.png);
+    background-position: -192px 0px;
+}
+
+.plaster {
+    background-image: url(../img/sheet_1.png);
+    background-position: -240px 0px;
+}
+
+.mixed_plaster {
+    background-image: url(../img/sheet_1.png);
+    background-position: -288px 0px;
+}
+
+.cheesecloth {
+    background-image: url(../img/sheet_1.png);
+    background-position: 0px -48px;
+}
+
+.prepared_plaster {
+    background-image: url(../img/sheet_1.png);
+    background-position: -48px -48px;
+}
+
+.creepy_doll {
+    background-image: url(../img/sheet_1.png);
+    background-position: -96px -48px;
+}
+
+.creepy_doll_hat {
+    background-image: url(../img/sheet_1.png);
+    background-position: -144px -48px;
+}
+
+.googly_eyes {
+    background-image: url(../img/sheet_1.png);
+    background-position: -192px -48px;
+}
+
+.stripped_doll {
+    background-image: url(../img/sheet_1.png);
+    background-position: -240px -48px;
+}
+
+.golem_mould {
+    background-image: url(../img/sheet_1.png);
+    background-position: -288px -48px;
+}
+
+.mud {
+    background-image: url(../img/sheet_1.png);
+    background-position: 0px -96px;
+}
+
+.unbaked_mould {
+    background-image: url(../img/sheet_1.png);
+    background-position: -48px -96px;
+}
+
+.egg {
+    background-image: url(../img/sheet_1.png);
+    background-position: -96px -96px;
+}
+
+.eggwhite {
+    background-image: url(../img/sheet_1.png);
+    background-position: -144px -96px;
+}
+
+.white_tempura_paint {
+    background-image: url(../img/sheet_1.png);
+    background-position: -192px -96px;
+}
+
+.cat2 {
+    background-image: url(../img/sheet_1.png);
+    background-position: -240px -96px;
+}
+
+.fresh_blood {
+    background-image: url(../img/sheet_1.png);
+    background-position: -288px -96px;
+}
+
+.catgut {
+    background-image: url(../img/sheet_1.png);
+    background-position: 0px -144px;
+}
+
+.prepared_golem {
+    background-image: url(../img/sheet_1.png);
+    background-position: -48px -144px;
+}
+
+.tiny_golem {
+    background-image: url(../img/sheet_1.png);
+    background-position: -96px -144px;
+}
+
+.gin {
+    background-image: url(../img/sheet_1.png);
+    background-position: -144px -144px;
+}
+
+.vermouth {
+    background-image: url(../img/sheet_1.png);
+    background-position: -144px -144px;
+}
+
+.jigger {
+    background-image: url(../img/sheet_1.png);
+    background-position: -192px -144px;
+}
+
+.olives {
+    background-image: url(../img/sheet_1.png);
+    background-position: -240px -144px;
+}
+
+.martini_glass {
+    background-image: url(../img/sheet_1.png);
+    background-position: -288px -144px;
+}
+
+.tool_fire {
+    background-image: url(../img/sheet_1.png);
+    background-position: 0px -192px;
+}
+
+.tool_pickaxe {
+    background-image: url(../img/sheet_1.png);
+    background-position: -48px -192px;
+}
+
+.tool_hand {
+    background-image: url(../img/sheet_1.png);
+    background-position: -96px -192px;
+}
+
+.tool_pull_apart {
+    background-image: url(../img/sheet_1.png);
+    background-position: -144px -192px;
+}
+
+.tool_kiln {
+    background-image: url(../img/sheet_1.png);
+    background-position: -192px -192px;
+}
+
+.tool_pestle {
+    background-image: url(../img/sheet_1.png);
+    background-position: -240px -192px;
+}
+
+.martini {
+    background-image: url(../img/sheet_1.png);
+    background-position: -288px -192px;
+}
+
+
+.baked_golem {
+    background-image: url(../img/sheet_1.png);
+    background-position: 0px -240px;
+}
+
+.ashe {
+    background-image: url(../img/sheet_1.png);
+    background-position: -48px -240px;
+}
+
+.dead_blood {
+    background-image: url(../img/sheet_1.png);
+    background-position: -96px -240px;
+}
