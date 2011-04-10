@@ -86,11 +86,11 @@
             <div class="slot" id="slot_f"><div class="item water"</div></div>
             <div class="slot" id="slot_g"><div class="item plaster"</div></div>
             <div class="slot" id="slot_h"><div class="item mixed_plaster"</div></div>
-            <div class="slot" id="slot_i"></div>
-            <div class="slot" id="slot_j"></div>
+            <div class="slot" id="slot_i"><div class="item cat"></div></div>
+            <div class="slot" id="slot_j"><div class="item scissors"></div></div>
             <div class="slot" id="slot_k"></div>
             <div class="slot" id="slot_l"></div>
-            <div class="slot" id="slot_m"></div>
+            <div class="slot" id="slot_m"><div class="item paper"></div></div>
             <div class="slot" id="slot_n"></div>
             <div class="slot" id="slot_o"><div class="item rock"></div></div>
             <div class="slot" id="slot_p"><div class="item dirt"></div></div>
@@ -99,24 +99,12 @@
         <br />
 
         <div id="toolbox" class="small_inventory" style="height: 108px;">
-            <div class="slot" id="tool_a">
-                <div class="item tool_fire"></div>
-            </div>
-            <div class="slot" id="tool_b">
-                <div class="item tool_pickaxe"></div>
-            </div>
-            <div class="slot" id="tool_c">
-                <div class="item tool_hand"></div>
-            </div>
-            <div class="slot" id="tool_d">
-                <div class="item tool_pull_apart"></div>
-            </div>
-            <div class="slot" id="tool_e">
-                <div class="item tool_kiln"></div>
-            </div>
-            <div class="slot" id="tool_f">
-                <div class="item tool_pestle"></div>
-            </div>
+            <div class="slot" id="tool_a"></div>
+            <div class="slot" id="tool_b"></div>
+            <div class="slot" id="tool_c"></div>
+            <div class="slot" id="tool_d"></div>
+            <div class="slot" id="tool_e"></div>
+            <div class="slot" id="tool_f"></div>
         </div>
     </div>
 <!--    
@@ -164,6 +152,17 @@
                     $( ui.draggable ).draggable( "option", "revert", true );
                 }, 10);
             }
+        });
+
+        $$.Slots.makeSpecial('#tool_a', 'tool_fire', function(event, ui) {
+            var newItem = $$.canBurn(ui.draggable);
+            if( newItem ) {
+                var slot = ui.draggable.parent();
+                slot.innerHTML = "";
+                var node = $(slot).append('<div class="item '+newItem+'"></div>');
+                $$.Items.makeDraggable( $(node.children()[0]) );
+            }
+            return false;
         });
 
     </script>

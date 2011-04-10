@@ -16,14 +16,38 @@ $$.mixchart = {
     }
 };
 
+$$.shakeChart = {
+    
+};
+
+$$.burnChart = {
+    paper : 'ashe'
+};
+
+$$.isItem = function( elem ) {
+    return !(elem.attr('class').split(' ')[0] != 'item' || !elem.attr('class').split(' ')[1]);
+}
+
+$$.canBurn = function( dragged ) {
+    if( !$$.isItem(dragged) ) {
+        debugger;
+        throw "invalid: was passed in something that was not an item.";
+    } 
+    
+    var a = dragged.attr('class').split(' ')[1];
+
+    if( $$.burnChart[a] ) {
+        return $$.burnChart[a];
+    }
+};
+
 $$.canMix = function( slotted, dragged ) {
     var a = slotted;
     var b = dragged;
 
-    if(    a.attr('class').split(' ')[0] != 'item'
-        || b.attr('class').split(' ')[0] != 'item'
-        || !a.attr('class').split(' ')[1]
-        || !b.attr('class').split(' ')[1]
+    if(
+           !$$.isItem(a) 
+        || !$$.isItem(b) 
     ) {
         debugger;
         throw "invalid: was passed in something that was not an item.";

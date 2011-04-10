@@ -149,16 +149,22 @@ $$.Slots = {
         });
     },
 
-/*
     makeSpecial : function( slot, classname, fn ) {
-        slot.add
-        var orig_fn = slot.drop;
-        slot.drop = function(event, ui) {
-            orig_fn(event, ui);
-            fn(event, ui);
-        }
+
+        slot = $(slot);
+        slot.addClass(classname);
+        
+        var orig_fn = slot.droppable("option", "drop");
+
+        /// probably breaking closures, find a bind you like, mofo.
+        slot.droppable("option", "drop",
+            function(event, ui) {
+                if( fn(event, ui) !== false ) {
+                    orig_fn(event, ui);
+                }
+            }
+        );
     }
-*/
 }
 
 
