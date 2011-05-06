@@ -27,7 +27,7 @@
     background-image: url(../img/gem.jpg);
 }
 
-.cat {
+.cat2 {
     background-image: url(../img/cat.jpg);
 }
 
@@ -126,7 +126,8 @@
     background-position: -192px -96px;
 }
 
-.cat2 {
+
+.cat {
     background-image: url(../img/sheet_1.png);
     background-position: -240px -96px;
 }
