@@ -178,6 +178,17 @@
             return false;
         });
 
+        $$.Slots.makeSpecial('#tool_b', 'tool_pickaxe', function(event, ui) {
+            var newItem = $$.canPickaxe(ui.draggable);
+            if( newItem ) {
+                var slot = ui.draggable.parent();
+                ui.draggable.remove();
+                var node = $(slot).append('<div class="item '+newItem+'"></div>');
+                $$.Items.makeDraggable( $(node.children()[0]) );
+            }
+            return false;
+        });
+
     </script>
     
 </body>

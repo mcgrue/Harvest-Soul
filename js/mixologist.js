@@ -24,6 +24,10 @@ $$.burnChart = {
     paper : 'ashe'
 };
 
+$$.pickaxeChart = {
+    rock : 'gypsum'
+};
+
 $$.isItem = function( elem ) {
     return !(elem.attr('class').split(' ')[0] != 'item' || !elem.attr('class').split(' ')[1]);
 }
@@ -53,6 +57,21 @@ $$.canBurn = function( dragged ) {
         return $$.burnChart[a];
     }
 };
+
+$$.canPickaxe = function( dragged ) {
+    if( !$$.isItem(dragged) ) {
+        debugger;
+        throw "invalid: was passed in something that was not an item.";
+    } 
+    
+    var a = dragged.attr('class').split(' ')[1];
+
+    if( $$.pickaxeChart[a] ) {
+        return $$.pickaxeChart[a];
+    }
+};
+
+
 
 $$.canMix = function( slotted, dragged ) {
     var a = slotted;
