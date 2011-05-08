@@ -28,6 +28,11 @@ $$.pickaxeChart = {
     rock : 'gypsum'
 };
 
+
+$$.pestleChart = {
+    gypsum : 'gypsum_dust'
+};
+
 $$.isItem = function( elem ) {
     return !(elem.attr('class').split(' ')[0] != 'item' || !elem.attr('class').split(' ')[1]);
 }
@@ -58,6 +63,19 @@ $$.canBurn = function( dragged ) {
     }
 };
 
+$$.canPestle = function( dragged ) {
+    if( !$$.isItem(dragged) ) {
+        debugger;
+        throw "invalid: was passed in something that was not an item.";
+    } 
+    
+    var a = dragged.attr('class').split(' ')[1];
+
+    if( $$.pestleChart[a] ) {
+        return $$.pestleChart[a];
+    }
+};
+
 $$.canPickaxe = function( dragged ) {
     if( !$$.isItem(dragged) ) {
         debugger;
@@ -70,8 +88,6 @@ $$.canPickaxe = function( dragged ) {
         return $$.pickaxeChart[a];
     }
 };
-
-
 
 $$.canMix = function( slotted, dragged ) {
     var a = slotted;

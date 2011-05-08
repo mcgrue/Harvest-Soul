@@ -100,6 +100,7 @@
 
         <br />
 
+        Tools:
         <div id="toolbox" class="small_inventory" style="height: 108px;">
             <div class="slot" id="tool_a"></div>
             <div class="slot" id="tool_b"></div>
@@ -157,6 +158,9 @@
             }
         });
 
+        
+
+
         $$.handleShake = function(item) {
             var newItem = $$.canShake(item);
             if( newItem ) {
@@ -188,6 +192,18 @@
             }
             return false;
         });
+
+        $$.Slots.makeSpecial('#tool_c', 'tool_pestle', function(event, ui) {
+            var newItem = $$.canPestle(ui.draggable);
+            if( newItem ) {
+                var slot = ui.draggable.parent();
+                ui.draggable.remove();
+                var node = $(slot).append('<div class="item '+newItem+'"></div>');
+                $$.Items.makeDraggable( $(node.children()[0]) );
+            }
+            return false;
+        });
+
 
     </script>
     
