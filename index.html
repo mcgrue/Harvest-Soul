@@ -4,6 +4,7 @@
     <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />   
     <link type="text/css" href="css/items.css" rel="stylesheet" />   
     <script type="text/javascript" src="js/harvest_soul.js"></script>
+
     <script type="text/javascript" src="js/mixologist.js"></script>
     <script type="text/javascript" src="js/jquery-ui/jquery-1.5.1.js"></script>
     <script type="text/javascript" src="js/jquery-ui/ui/jquery.ui.core.js"></script>
@@ -76,26 +77,31 @@
         <li><a href="#tabs-2">Bestiary</a></li>
         <li><a href="#tabs-3">World Map</a></li>
     </ul>
+
+
+
+    
+    <div class="slot" id="slot_a"><div class="item cat2"></div></div>
 -->
     <div id="tabs-1" class="playarea">
         <h1>Laboratory</h1>
-        <div class="small_inventory">
-            <div class="slot" id="slot_a"><div class="item cat2"></div></div>
-            <div class="slot" id="slot_b"><div class="item rock"></div></div>
-            <div class="slot" id="slot_c"><div class="item dirt"></div></div>
-            <div class="slot" id="slot_d"><div class="item gypsum"></div></div>
-            <div class="slot" id="slot_e"><div class="item gypsum_dust"></div></div>
-            <div class="slot" id="slot_f"><div class="item water"></div></div>
-            <div class="slot" id="slot_g"><div class="item plaster"></div></div>
-            <div class="slot" id="slot_h"><div class="item mixed_plaster"></div></div>
-            <div class="slot" id="slot_i"><div class="item cat"></div></div>
-            <div class="slot" id="slot_j"><div class="item scissors"></div></div>
-            <div class="slot" id="slot_k"><div class="item cat"></div></div>
+        <div id="main_inventory" class="small_inventory">
+            <div class="slot" id="slot_a"></div>
+            <div class="slot" id="slot_b"></div>
+            <div class="slot" id="slot_c"></div>
+            <div class="slot" id="slot_d"></div>
+            <div class="slot" id="slot_e"></div>
+            <div class="slot" id="slot_f"></div>
+            <div class="slot" id="slot_g"></div>
+            <div class="slot" id="slot_h"></div>
+            <div class="slot" id="slot_i"></div>
+            <div class="slot" id="slot_j"></div>
+            <div class="slot" id="slot_k"></div>
             <div class="slot" id="slot_l"></div>
-            <div class="slot" id="slot_m"><div class="item paper"></div></div>
+            <div class="slot" id="slot_m"></div>
             <div class="slot" id="slot_n"></div>
-            <div class="slot" id="slot_o"><div class="item rock"></div></div>
-            <div class="slot" id="slot_p"><div class="item dirt"></div></div>
+            <div class="slot" id="slot_o"></div>
+            <div class="slot" id="slot_p"></div>
         </div>
 
         <br />
@@ -104,7 +110,6 @@
         <div id="toolbox" class="small_inventory" style="height: 108px;">
             <div class="slot" id="tool_a"></div>
             <div class="slot" id="tool_b"></div>
-
             <div class="slot" id="tool_c"></div>
             <div class="slot" id="tool_d"></div>
             <div class="slot" id="tool_e"></div>
@@ -204,6 +209,22 @@
             return false;
         });
 
+        $$.Items.addToInventory = function( newItem ) {
+            var inv = $('#main_inventory').children();
+            for( var i=0; i<inv.length; i++ ) {
+                if( !$(inv[i]).children().length ) {
+                    var slot = $(inv[i]);
+                    var node = $(slot).append('<div class="item '+newItem+'"></div>');
+                    $$.Items.makeDraggable( $(node.children()[0]) );
+                    return;
+                } 
+            }
+
+            $$.log('failed to add a thing to inventory: "'+newItem+'" :(');
+        };
+
+        $$.Items.addToInventory('cat');
+        $$.Items.addToInventory('cat');
 
     </script>
     

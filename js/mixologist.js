@@ -15,12 +15,22 @@ $$.mixchart = {
         cat : 'scissors'
     },
 
+    /// "real" mixes.
+
     water : {
         gypsum_dust : 'gypsum_solution'    
     },
 
     gypsum_dust : {
         water : 'gypsum_solution'
+    },
+
+    mixed_plaster : {
+        cheesecloth : 'prepared_plaster'
+    },
+
+    cheesecloth : {
+        mixed_plaster : 'prepared_plaster'
     }
 };
 
