@@ -13,11 +13,20 @@ $$.mixchart = {
 
     scissors : {
         cat : 'scissors'
+    },
+
+    water : {
+        gypsum_dust : 'gypsum_solution'    
+    },
+
+    gypsum_dust : {
+        water : 'gypsum_solution'
     }
 };
 
 $$.shakeChart = {
-    cat : 'skull'
+    cat : 'skull',
+    gypsum_solution : 'mixed_plaster'
 };
 
 $$.burnChart = {
