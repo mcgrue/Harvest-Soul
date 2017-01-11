@@ -66,170 +66,168 @@
     background-position: -288px 0px;
 }
 
-.cheesecloth {
-    background-image: url(../img/sheet_1.png);
-    background-position: 0px -48px;
-}
 
 .prepared_plaster {
     background-image: url(../img/sheet_1.png);
-    background-position: -48px -48px;
+    background-position: -336px -0px;
 }
 
 .creepy_doll {
     background-image: url(../img/sheet_1.png);
-    background-position: -96px -48px;
+    background-position: -384px -0px;
 }
 
 .creepy_doll_hat {
     background-image: url(../img/sheet_1.png);
-    background-position: -144px -48px;
+    background-position: -432px -0px;
 }
 
 .googly_eyes {
     background-image: url(../img/sheet_1.png);
-    background-position: -192px -48px;
+    background-position: -0px -48px;
 }
 
 .stripped_doll {
     background-image: url(../img/sheet_1.png);
-    background-position: -240px -48px;
+    background-position: -48px -48px;
 }
 
 .golem_mould {
     background-image: url(../img/sheet_1.png);
-    background-position: -288px -48px;
+    background-position: -96px -48px;
 }
 
 .mud {
     background-image: url(../img/sheet_1.png);
-    background-position: 0px -96px;
+    background-position: -144px -48px;
 }
 
 .unbaked_mould {
     background-image: url(../img/sheet_1.png);
-    background-position: -48px -96px;
+    background-position: -192px -48px;
 }
 
 .egg {
     background-image: url(../img/sheet_1.png);
-    background-position: -96px -96px;
+    background-position: -240px -48px;
 }
 
 .eggwhite {
     background-image: url(../img/sheet_1.png);
-    background-position: -144px -96px;
+    background-position: -288px -48px;
 }
 
 .white_tempura_paint {
     background-image: url(../img/sheet_1.png);
-    background-position: -192px -96px;
+    background-position: -336px -48px;
 }
-
 
 .cat {
     background-image: url(../img/sheet_1.png);
-    background-position: -240px -96px;
+    background-position: -384px -48px;
 }
 
 .fresh_blood {
     background-image: url(../img/sheet_1.png);
-    background-position: -288px -96px;
+    background-position: -432px -48px;
 }
 
 .catgut {
     background-image: url(../img/sheet_1.png);
-    background-position: 0px -144px;
+    background-position: 0px -96px;
 }
 
 .prepared_golem {
     background-image: url(../img/sheet_1.png);
-    background-position: -48px -144px;
+    background-position: -48px -96px;
 }
 
 .tiny_golem {
     background-image: url(../img/sheet_1.png);
-    background-position: -96px -144px;
+    background-position: -96px -96px;
 }
 
 .gin {
     background-image: url(../img/sheet_1.png);
-    background-position: -144px -144px;
+    background-position: -144px -96px;
 }
 
 .vermouth {
     background-image: url(../img/sheet_1.png);
-    background-position: -144px -144px;
+    background-position: -192px -96px;
 }
 
 .jigger {
     background-image: url(../img/sheet_1.png);
-    background-position: -192px -144px;
+    background-position: -240px -96px;
 }
 
 .olives {
     background-image: url(../img/sheet_1.png);
-    background-position: -240px -144px;
+    background-position: -288px -96px;
 }
 
 .martini_glass {
     background-image: url(../img/sheet_1.png);
-    background-position: -288px -144px;
+    background-position: -336px -96px;
 }
 
 .tool_fire {
     background-image: url(../img/sheet_1.png);
-    background-position: 0px -192px;
+    background-position: -384px -96px;
 }
 
 .tool_pickaxe {
     background-image: url(../img/sheet_1.png);
-    background-position: -48px -192px;
+    background-position: -432px -96px;
 }
 
 .tool_hand {
     background-image: url(../img/sheet_1.png);
-    background-position: -96px -192px;
+    background-position: -0px -144px;
 }
 
 .tool_pull_apart {
     background-image: url(../img/sheet_1.png);
-    background-position: -144px -192px;
+    background-position: -48px -144px;
 }
 
 .tool_kiln {
     background-image: url(../img/sheet_1.png);
-    background-position: -192px -192px;
+    background-position: -96px -144px;
 }
 
 .tool_pestle {
     background-image: url(../img/sheet_1.png);
-    background-position: -240px -192px;
+    background-position: -192px -144px;
 }
 
 .martini {
     background-image: url(../img/sheet_1.png);
-    background-position: -288px -192px;
+    background-position: -240px -144px;
 }
-
 
 .baked_golem {
     background-image: url(../img/sheet_1.png);
-    background-position: 0px -240px;
+    background-position: -48px -96px;
 }
 
 .ashe {
     background-image: url(../img/sheet_1.png);
-    background-position: -48px -240px;
+    background-position: 0px -144px;
 }
 
 .dead_blood {
     background-image: url(../img/sheet_1.png);
-    background-position: -96px -240px;
+    background-position: -432px -144px;
 }
 
 .gypsum_solution {
     background-image: url(../img/sheet_1.png);
-    background-position: -144px -240px;
+    background-position: -288px -0px;
 }
 
+.cheesecloth {
+    background-image: url(../img/sheet_1.png);
+    background-position: -288px 144px;
+}
